@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rexi Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+<header>
+    <div class="logo">REXI</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#section2">About Me</a>
+        <a href="showcase.html">Showcase</a>
+        <a href="#section3">Contact</a>
+    </nav>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</header>
+
+
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="#">About Me</a>
+    <a href="showcase.html">Showcase</a>
+    <a href="#">Contact</a>
+</div>
+
+
+
+<section class="hero">
+    <div class="hero-container">
+
+        <div class="hero-image">
+            <img src="me.png" alt="Rex Illustration">
+        </div>
+        
+        <div class="hero-text">
+            <h1>Rexcin Dane Nabarte</h1>
+            <p>
+                Digital Artist/Illustrator
+            </p>
+
+            <a href="showcase.html" class="btn2">View Showcase</a>
+        </div>
+
+        
+
+    </div>
+</section>
+
+<section class="about" id="section2">
+
+    <div class="about-container">
+
+        <div class="about-image">
+            <img src="intro.png" alt="About Rex">
+        </div>
+
+        <div class="about-text">
+            <h2>About Me</h2>
+
+            <p>
+                Hi, I am Rex! A Bachelor of Multimedia Arts student with a
+                strong passion for digital arts and creative storytelling.
+                I specialize in illustration, storyboarding, and animation.
+                <br>
+                <br>
+                I started my multimedia journey by making simple animations
+                in Youtube since 2020 to making customized and professional
+                illustrations and comic panels for Minute Burger.
+            </p>
+
+            <a href="showcase.html" class="btn">See More</a>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact" id="section3">
+
+    <div class="contact-container">
+
+        <h2>Let’s Connect</h2>
+
+        <p class="contact-description">
+            I’m always open to creative collaborations, commissions,
+            and exciting multimedia projects. Whether you have an idea,
+            a partnership opportunity, or simply want to connect,
+            feel free to reach out through my platforms below.
+            <br>
+            <br>
+            <b>Email</b>: rexplosionguy@gmail.com
+            <br>
+            <b>Contact No. </b>: +63962432024
+        </p>
+
+        <div class="contact-buttons">
+
+            <a href="https://www.facebook.com/rexiguy" class="contact-btn" target="_blank">
+                Facebook
+            </a>
+
+            <a href="https://www.youtube.com/@Rexplosion" class="contact-btn" target="_blank">
+                YouTube
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>STI College General Santos</p>
+    <p>J. Catolico Avenue, General Santos City</p>
+    <p>SOCKSARGEN 9500</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
