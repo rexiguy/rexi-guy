@@ -11,6 +11,48 @@
 
 <body>
 
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    function toggleMenu() {
+        document.getElementById("mobileMenu").classList.toggle("active");
+    }
+
+    window.toggleMenu = toggleMenu;
+
+    const cards = document.querySelectorAll(".art-card");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const caption = document.getElementById("lightbox-caption");
+    const closeBtn = document.querySelector(".close-lightbox");
+
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            const img = card.querySelector("img");
+
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+
+            const title = card.querySelector("h3");
+            if(title) caption.textContent = title.textContent;
+
+            lightbox.classList.add("active");
+        });
+    });
+
+    closeBtn.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+    });
+
+    lightbox.addEventListener("click", e => {
+        if(e.target === lightbox){
+            lightbox.classList.remove("active");
+        }
+    });
+
+});
+</script>
+
 <header>
     <div class="logo">REXI</div>
 
@@ -47,36 +89,13 @@
     <div class="gallery-grid">
 
         <div class="art-card">
-            <img src="blue.png" alt="Artwork 5">
-            <div class="art-info">
-                <h3>Our Blue</h3>
-                <p>Two boys with dreams to the skies and above.</p>
-            </div>
-        </div>
-
-        <div class="art-card">
-            <img src="embers.png" alt="Artwork 2">
-            <div class="art-info">
-                <h3>Embers</h3>
-                <p>Burning passion flows through the fists of the creator.</p>
-            </div>
-        </div>
-
-        <div class="art-card">
-            <img src="cover.png" alt="Artwork 3">
-            <div class="art-info">
-                <h3>STI Magazine Cover</h3>
-                <p>Jojo style artwork for our College Magazine about different courses' capstones/thesis.</p>
-            </div>
-        </div>
-
-        <div class="art-card">
             <img src="entry.jpg" alt="Artwork 4">
             <div class="art-info">
                 <h3>Harmony and Truth</h3>
                 <p>A Competition Piece for the National Arts Month Event at General Santos City.</p>
             </div>
         </div>
+
 
         <div class="art-card">
             <img src="gungnam.png" alt="Artwork 5">
@@ -91,6 +110,22 @@
             <div class="art-info">
                 <h3>Anti-AI Art Campaign</h3>
                 <p>A Digital Piece for a Marketing Campaign at Minute Burger. Specificallt against AI art.</p>
+            </div>
+        </div>
+
+        <div class="art-card">
+            <img src="embers.png" alt="Artwork 2">
+            <div class="art-info">
+                <h3>Embers</h3>
+                <p>Burning passion flows through the fists of the creator.</p>
+            </div>
+        </div>
+
+        <div class="art-card">
+            <img src="blue.png" alt="Artwork 5">
+            <div class="art-info">
+                <h3>Our Blue</h3>
+                <p>Two boys with dreams to the skies and above.</p>
             </div>
         </div>
 
@@ -119,6 +154,14 @@
         </div>
 
         <div class="art-card">
+            <img src="cover.png" alt="Artwork 3">
+            <div class="art-info">
+                <h3>STI Magazine Cover</h3>
+                <p>Jojo style artwork for our College Magazine about different courses' capstones/thesis.</p>
+            </div>
+        </div>
+
+        <div class="art-card">
             <img src="cyno.png" alt="Artwork 1">
             <div class="art-info">
                 <h3>Into the Scarlet Sands</h3>
@@ -137,11 +180,13 @@
     <p>SOCKSARGEN 9500</p>
 </footer>
 
-<script>
-function toggleMenu() {
-    document.getElementById("mobileMenu").classList.toggle("active");
-}
-</script>
+
+<!-- Artwork Lightbox -->
+<div class="lightbox" id="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
 
 </body>
 </html>
